@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>message-add.html</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=arrow_back" />
+</head>
+
+<body>
+<a href="index.html">
+<span class="material-symbols-outlined">
+  arrow_back
+</span>
+  </a>
+<h2 id="showmsg"></h2>
+
+<script>
+
+
+
+function checkMessage(){
+
+var savedDate = localStorage.getItem("salaryDate");
+var savedMsg = localStorage.getItem("salaryMsg");
+
+var today = new Date().toISOString().split("T")[0];
+
+if(today == savedDate){
+document.getElementById("showmsg").innerHTML = savedMsg;
+}
+
+}
+
+checkMessage();
+
+setInterval(checkMessage,5000);
+
+</script>
+  
+  
+  <h1>message_add</h1>
+
+  <p></p>
+  
+  <div id="messages"></div>
+  
+</body>
+
+
+</html>
